@@ -52,6 +52,7 @@ def download(url, user_agent = 'Mozilla/4.0'):
         text = response.read()
     except HTTPError ae e:
         print ('Error Code:' + str(e.code))
+        print (error_messages[e.code])
     except URLError as e:
         print ('Failed, Reason: ' + str(e.reason))
     extract = re.search('<title>(.)</title', text)
